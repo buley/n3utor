@@ -1,14 +1,14 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.5.16;
 
 import "./OracleInterface.sol";
 import "./Ownable.sol";
 
-contract Mediations is Ownable {
+contract MediationOffers is Ownable {
     
     mapping(address => bytes32[]) private userToOffers;
     mapping(bytes32 => Offer[]) private disputeToOffers;
 
-    address internal mediationOracleAddr = 0;
+    address internal mediationOracleAddr = 0x957f308011Bd0Fa95ac95fD92A73F06cb7Ec6774;
     OracleInterface internal mediationOracle = OracleInterface(mediationOracleAddr);
 
     uint internal minimumOffer = 1000000000000;
@@ -43,14 +43,14 @@ contract Mediations is Ownable {
         return mediationOracleAddr;
     }
 
-    function getResolvableDisputes() public view returns (bytes32[]) {
+    function getResolvableDisputes() public view returns (bytes32[] memory) {
         return mediationOracle.getPendingDisputes();
     }
 
     function getDispute(bytes32 _disputeId) public view returns (
         bytes32 id,
-        string name, 
-        string participants,
+        string memory name,
+        string memory participants,
         uint8 participantCount,
         uint date, 
         OracleInterface.DisputeOutcome outcome,
@@ -60,8 +60,8 @@ contract Mediations is Ownable {
 
     function getMostRecentDispute() public view returns (
         bytes32 id,
-        string name, 
-        string participants,
+        string memory name,
+        string memory participants,
         uint participantCount, 
         uint date, 
         OracleInterface.DisputeOutcome outcome,
@@ -79,7 +79,9 @@ contract Mediations is Ownable {
 
         require(_disputeOpenForResolution(_disputeId), "Dispute not open for resolution");
 
-        address(this).transfer(msg.value);
+        address payable addr1 = address(uint160(address(this)));
+
+        addr1.transfer(msg.value);
 
         Offer[] storage offers = disputeToOffers[_disputeId];
         offers.push(Offer(msg.sender, _disputeId, msg.value, _offerValue))-1;

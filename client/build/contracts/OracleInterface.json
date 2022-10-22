@@ -1,0 +1,1982 @@
+{
+  "contractName": "OracleInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getPendingDisputes",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllDisputes",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_disputeId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "disputeExists",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_disputeId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getDispute",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "participants",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "participantCount",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "date",
+          "type": "uint256"
+        },
+        {
+          "internalType": "enum OracleInterface.DisputeOutcome",
+          "name": "outcome",
+          "type": "uint8"
+        },
+        {
+          "internalType": "int8",
+          "name": "mediator",
+          "type": "int8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_pending",
+          "type": "bool"
+        }
+      ],
+      "name": "getMostRecentDispute",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "participants",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "participantCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "date",
+          "type": "uint256"
+        },
+        {
+          "internalType": "enum OracleInterface.DisputeOutcome",
+          "name": "outcome",
+          "type": "uint8"
+        },
+        {
+          "internalType": "int8",
+          "name": "mediator",
+          "type": "int8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "testConnection",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "addTestData",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"addTestData\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_disputeId\",\"type\":\"bytes32\"}],\"name\":\"disputeExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getAllDisputes\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_disputeId\",\"type\":\"bytes32\"}],\"name\":\"getDispute\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"id\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"participants\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"participantCount\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"date\",\"type\":\"uint256\"},{\"internalType\":\"enum OracleInterface.DisputeOutcome\",\"name\":\"outcome\",\"type\":\"uint8\"},{\"internalType\":\"int8\",\"name\":\"mediator\",\"type\":\"int8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_pending\",\"type\":\"bool\"}],\"name\":\"getMostRecentDispute\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"id\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"participants\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"participantCount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"date\",\"type\":\"uint256\"},{\"internalType\":\"enum OracleInterface.DisputeOutcome\",\"name\":\"outcome\",\"type\":\"uint8\"},{\"internalType\":\"int8\",\"name\":\"mediator\",\"type\":\"int8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getPendingDisputes\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"testConnection\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/OracleInterface.sol\":\"OracleInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/OracleInterface.sol\":{\"keccak256\":\"0xa731f3921aa33897bf19f9541c16e889ce36654c453dd72a0b9a439c5894536b\",\"urls\":[\"bzz-raw://fbd9f59ab51516f0dd952cd4bf47381bd2a50c1df744b7d946a984448e906889\",\"dweb:/ipfs/QmUoJV2umDxoaZ89tvrGh3iz51nHYGvffbyurbc92CyjRt\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.16;\n\ncontract OracleInterface {\n\n    enum DisputeOutcome {\n        Pending,\n        Underway,\n        Draw,\n        Decided\n    }\n\n    function getPendingDisputes() public view returns (bytes32[] memory);\n\n    function getAllDisputes() public view returns (bytes32[] memory);\n\n    function disputeExists(bytes32 _disputeId) public view returns (bool);\n\n    function getDispute(bytes32 _disputeId) public view returns (\n        bytes32 id,\n        string memory name,\n        string memory participants,\n        uint8 participantCount,\n        uint date, \n        DisputeOutcome outcome,\n        int8 mediator);\n\n    function getMostRecentDispute(bool _pending) public view returns (\n        bytes32 id,\n        string memory name,\n        string memory participants,\n        uint participantCount,\n        uint date, \n        DisputeOutcome outcome,\n        int8 mediator);\n\n    function testConnection() public pure returns (bool);\n\n    function addTestData() public; \n}\n",
+  "sourcePath": "/Users/tbuley/Documents/Code/n3utor/client/contracts/OracleInterface.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/OracleInterface.sol",
+    "exportedSymbols": {
+      "OracleInterface": [
+        390
+      ]
+    },
+    "id": 391,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 319,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 390,
+        "linearizedBaseContracts": [
+          390
+        ],
+        "name": "OracleInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "OracleInterface.DisputeOutcome",
+            "id": 324,
+            "members": [
+              {
+                "id": 320,
+                "name": "Pending",
+                "nodeType": "EnumValue",
+                "src": "88:7:2"
+              },
+              {
+                "id": 321,
+                "name": "Underway",
+                "nodeType": "EnumValue",
+                "src": "105:8:2"
+              },
+              {
+                "id": 322,
+                "name": "Draw",
+                "nodeType": "EnumValue",
+                "src": "123:4:2"
+              },
+              {
+                "id": 323,
+                "name": "Decided",
+                "nodeType": "EnumValue",
+                "src": "137:7:2"
+              }
+            ],
+            "name": "DisputeOutcome",
+            "nodeType": "EnumDefinition",
+            "src": "58:92:2"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 330,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPendingDisputes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 325,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "183:2:2"
+            },
+            "returnParameters": {
+              "id": 329,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 328,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 330,
+                  "src": "207:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 326,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "207:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 327,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "207:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "206:18:2"
+            },
+            "scope": 390,
+            "src": "156:69:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 336,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllDisputes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 331,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "254:2:2"
+            },
+            "returnParameters": {
+              "id": 335,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 334,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 336,
+                  "src": "278:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 332,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "278:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 333,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "278:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "277:18:2"
+            },
+            "scope": 390,
+            "src": "231:65:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 343,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "disputeExists",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 339,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 338,
+                  "name": "_disputeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 343,
+                  "src": "325:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 337,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "325:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "324:20:2"
+            },
+            "returnParameters": {
+              "id": 342,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 341,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 343,
+                  "src": "366:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 340,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "365:6:2"
+            },
+            "scope": 390,
+            "src": "302:70:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 362,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDispute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 346,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 345,
+                  "name": "_disputeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 362,
+                  "src": "398:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 344,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "398:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "397:20:2"
+            },
+            "returnParameters": {
+              "id": 361,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 348,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 362,
+                  "src": "448:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 347,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "448:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 350,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 362,
+                  "src": "468:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 349,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "468:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 352,
+                  "name": "participants",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 362,
+                  "src": "496:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 351,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "496:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 354,
+                  "name": "participantCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 362,
+                  "src": "532:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 353,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "532:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 356,
+                  "name": "date",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 362,
+                  "src": "564:9:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 355,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "564:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 358,
+                  "name": "outcome",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 362,
+                  "src": "584:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DisputeOutcome_$324",
+                    "typeString": "enum OracleInterface.DisputeOutcome"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 357,
+                    "name": "DisputeOutcome",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 324,
+                    "src": "584:14:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DisputeOutcome_$324",
+                      "typeString": "enum OracleInterface.DisputeOutcome"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 360,
+                  "name": "mediator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 362,
+                  "src": "616:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int8",
+                    "typeString": "int8"
+                  },
+                  "typeName": {
+                    "id": 359,
+                    "name": "int8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "616:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int8",
+                      "typeString": "int8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "438:192:2"
+            },
+            "scope": 390,
+            "src": "378:253:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 381,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMostRecentDispute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 365,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 364,
+                  "name": "_pending",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "667:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 363,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "667:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "666:15:2"
+            },
+            "returnParameters": {
+              "id": 380,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 367,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "712:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 366,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "712:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 369,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "732:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 368,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "732:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 371,
+                  "name": "participants",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "760:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 370,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "760:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 373,
+                  "name": "participantCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "796:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 372,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "796:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 375,
+                  "name": "date",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "827:9:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 374,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "827:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 377,
+                  "name": "outcome",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "847:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DisputeOutcome_$324",
+                    "typeString": "enum OracleInterface.DisputeOutcome"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 376,
+                    "name": "DisputeOutcome",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 324,
+                    "src": "847:14:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DisputeOutcome_$324",
+                      "typeString": "enum OracleInterface.DisputeOutcome"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 379,
+                  "name": "mediator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "879:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int8",
+                    "typeString": "int8"
+                  },
+                  "typeName": {
+                    "id": 378,
+                    "name": "int8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "879:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int8",
+                      "typeString": "int8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "702:191:2"
+            },
+            "scope": 390,
+            "src": "637:257:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 386,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testConnection",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 382,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "923:2:2"
+            },
+            "returnParameters": {
+              "id": 385,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 384,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 386,
+                  "src": "947:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 383,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "947:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "946:6:2"
+            },
+            "scope": 390,
+            "src": "900:53:2",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 389,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addTestData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "979:2:2"
+            },
+            "returnParameters": {
+              "id": 388,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "988:0:2"
+            },
+            "scope": 390,
+            "src": "959:30:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 391,
+        "src": "26:966:2"
+      }
+    ],
+    "src": "0:993:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/OracleInterface.sol",
+      "exportedSymbols": {
+        "OracleInterface": [
+          390
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".16"
+          ]
+        },
+        "id": 319,
+        "name": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            390
+          ],
+          "name": "OracleInterface",
+          "scope": 391
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "OracleInterface.DisputeOutcome",
+              "name": "DisputeOutcome"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "Pending"
+                },
+                "id": 320,
+                "name": "EnumValue",
+                "src": "88:7:2"
+              },
+              {
+                "attributes": {
+                  "name": "Underway"
+                },
+                "id": 321,
+                "name": "EnumValue",
+                "src": "105:8:2"
+              },
+              {
+                "attributes": {
+                  "name": "Draw"
+                },
+                "id": 322,
+                "name": "EnumValue",
+                "src": "123:4:2"
+              },
+              {
+                "attributes": {
+                  "name": "Decided"
+                },
+                "id": 323,
+                "name": "EnumValue",
+                "src": "137:7:2"
+              }
+            ],
+            "id": 324,
+            "name": "EnumDefinition",
+            "src": "58:92:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getPendingDisputes",
+              "scope": 390,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 325,
+                "name": "ParameterList",
+                "src": "183:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 330,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes32[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "bytes32[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "bytes32",
+                              "type": "bytes32"
+                            },
+                            "id": 326,
+                            "name": "ElementaryTypeName",
+                            "src": "207:7:2"
+                          }
+                        ],
+                        "id": 327,
+                        "name": "ArrayTypeName",
+                        "src": "207:9:2"
+                      }
+                    ],
+                    "id": 328,
+                    "name": "VariableDeclaration",
+                    "src": "207:16:2"
+                  }
+                ],
+                "id": 329,
+                "name": "ParameterList",
+                "src": "206:18:2"
+              }
+            ],
+            "id": 330,
+            "name": "FunctionDefinition",
+            "src": "156:69:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getAllDisputes",
+              "scope": 390,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 331,
+                "name": "ParameterList",
+                "src": "254:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 336,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes32[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "bytes32[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "bytes32",
+                              "type": "bytes32"
+                            },
+                            "id": 332,
+                            "name": "ElementaryTypeName",
+                            "src": "278:7:2"
+                          }
+                        ],
+                        "id": 333,
+                        "name": "ArrayTypeName",
+                        "src": "278:9:2"
+                      }
+                    ],
+                    "id": 334,
+                    "name": "VariableDeclaration",
+                    "src": "278:16:2"
+                  }
+                ],
+                "id": 335,
+                "name": "ParameterList",
+                "src": "277:18:2"
+              }
+            ],
+            "id": 336,
+            "name": "FunctionDefinition",
+            "src": "231:65:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "disputeExists",
+              "scope": 390,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_disputeId",
+                      "scope": 343,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 337,
+                        "name": "ElementaryTypeName",
+                        "src": "325:7:2"
+                      }
+                    ],
+                    "id": 338,
+                    "name": "VariableDeclaration",
+                    "src": "325:18:2"
+                  }
+                ],
+                "id": 339,
+                "name": "ParameterList",
+                "src": "324:20:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 343,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 340,
+                        "name": "ElementaryTypeName",
+                        "src": "366:4:2"
+                      }
+                    ],
+                    "id": 341,
+                    "name": "VariableDeclaration",
+                    "src": "366:4:2"
+                  }
+                ],
+                "id": 342,
+                "name": "ParameterList",
+                "src": "365:6:2"
+              }
+            ],
+            "id": 343,
+            "name": "FunctionDefinition",
+            "src": "302:70:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getDispute",
+              "scope": 390,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_disputeId",
+                      "scope": 362,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 344,
+                        "name": "ElementaryTypeName",
+                        "src": "398:7:2"
+                      }
+                    ],
+                    "id": 345,
+                    "name": "VariableDeclaration",
+                    "src": "398:18:2"
+                  }
+                ],
+                "id": 346,
+                "name": "ParameterList",
+                "src": "397:20:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "id",
+                      "scope": 362,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 347,
+                        "name": "ElementaryTypeName",
+                        "src": "448:7:2"
+                      }
+                    ],
+                    "id": 348,
+                    "name": "VariableDeclaration",
+                    "src": "448:10:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "name",
+                      "scope": 362,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 349,
+                        "name": "ElementaryTypeName",
+                        "src": "468:6:2"
+                      }
+                    ],
+                    "id": 350,
+                    "name": "VariableDeclaration",
+                    "src": "468:18:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "participants",
+                      "scope": 362,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 351,
+                        "name": "ElementaryTypeName",
+                        "src": "496:6:2"
+                      }
+                    ],
+                    "id": 352,
+                    "name": "VariableDeclaration",
+                    "src": "496:26:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "participantCount",
+                      "scope": 362,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 353,
+                        "name": "ElementaryTypeName",
+                        "src": "532:5:2"
+                      }
+                    ],
+                    "id": 354,
+                    "name": "VariableDeclaration",
+                    "src": "532:22:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "date",
+                      "scope": 362,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 355,
+                        "name": "ElementaryTypeName",
+                        "src": "564:4:2"
+                      }
+                    ],
+                    "id": 356,
+                    "name": "VariableDeclaration",
+                    "src": "564:9:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "outcome",
+                      "scope": 362,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum OracleInterface.DisputeOutcome",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "DisputeOutcome",
+                          "referencedDeclaration": 324,
+                          "type": "enum OracleInterface.DisputeOutcome"
+                        },
+                        "id": 357,
+                        "name": "UserDefinedTypeName",
+                        "src": "584:14:2"
+                      }
+                    ],
+                    "id": 358,
+                    "name": "VariableDeclaration",
+                    "src": "584:22:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "mediator",
+                      "scope": 362,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int8",
+                          "type": "int8"
+                        },
+                        "id": 359,
+                        "name": "ElementaryTypeName",
+                        "src": "616:4:2"
+                      }
+                    ],
+                    "id": 360,
+                    "name": "VariableDeclaration",
+                    "src": "616:13:2"
+                  }
+                ],
+                "id": 361,
+                "name": "ParameterList",
+                "src": "438:192:2"
+              }
+            ],
+            "id": 362,
+            "name": "FunctionDefinition",
+            "src": "378:253:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getMostRecentDispute",
+              "scope": 390,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_pending",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 363,
+                        "name": "ElementaryTypeName",
+                        "src": "667:4:2"
+                      }
+                    ],
+                    "id": 364,
+                    "name": "VariableDeclaration",
+                    "src": "667:13:2"
+                  }
+                ],
+                "id": 365,
+                "name": "ParameterList",
+                "src": "666:15:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "id",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 366,
+                        "name": "ElementaryTypeName",
+                        "src": "712:7:2"
+                      }
+                    ],
+                    "id": 367,
+                    "name": "VariableDeclaration",
+                    "src": "712:10:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "name",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 368,
+                        "name": "ElementaryTypeName",
+                        "src": "732:6:2"
+                      }
+                    ],
+                    "id": 369,
+                    "name": "VariableDeclaration",
+                    "src": "732:18:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "participants",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 370,
+                        "name": "ElementaryTypeName",
+                        "src": "760:6:2"
+                      }
+                    ],
+                    "id": 371,
+                    "name": "VariableDeclaration",
+                    "src": "760:26:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "participantCount",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 372,
+                        "name": "ElementaryTypeName",
+                        "src": "796:4:2"
+                      }
+                    ],
+                    "id": 373,
+                    "name": "VariableDeclaration",
+                    "src": "796:21:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "date",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 374,
+                        "name": "ElementaryTypeName",
+                        "src": "827:4:2"
+                      }
+                    ],
+                    "id": 375,
+                    "name": "VariableDeclaration",
+                    "src": "827:9:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "outcome",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum OracleInterface.DisputeOutcome",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "DisputeOutcome",
+                          "referencedDeclaration": 324,
+                          "type": "enum OracleInterface.DisputeOutcome"
+                        },
+                        "id": 376,
+                        "name": "UserDefinedTypeName",
+                        "src": "847:14:2"
+                      }
+                    ],
+                    "id": 377,
+                    "name": "VariableDeclaration",
+                    "src": "847:22:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "mediator",
+                      "scope": 381,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int8",
+                          "type": "int8"
+                        },
+                        "id": 378,
+                        "name": "ElementaryTypeName",
+                        "src": "879:4:2"
+                      }
+                    ],
+                    "id": 379,
+                    "name": "VariableDeclaration",
+                    "src": "879:13:2"
+                  }
+                ],
+                "id": 380,
+                "name": "ParameterList",
+                "src": "702:191:2"
+              }
+            ],
+            "id": 381,
+            "name": "FunctionDefinition",
+            "src": "637:257:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "testConnection",
+              "scope": 390,
+              "stateMutability": "pure",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 382,
+                "name": "ParameterList",
+                "src": "923:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 386,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 383,
+                        "name": "ElementaryTypeName",
+                        "src": "947:4:2"
+                      }
+                    ],
+                    "id": 384,
+                    "name": "VariableDeclaration",
+                    "src": "947:4:2"
+                  }
+                ],
+                "id": 385,
+                "name": "ParameterList",
+                "src": "946:6:2"
+              }
+            ],
+            "id": 386,
+            "name": "FunctionDefinition",
+            "src": "900:53:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "addTestData",
+              "scope": 390,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 387,
+                "name": "ParameterList",
+                "src": "979:2:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 388,
+                "name": "ParameterList",
+                "src": "988:0:2"
+              }
+            ],
+            "id": 389,
+            "name": "FunctionDefinition",
+            "src": "959:30:2"
+          }
+        ],
+        "id": 390,
+        "name": "ContractDefinition",
+        "src": "26:966:2"
+      }
+    ],
+    "id": 391,
+    "name": "SourceUnit",
+    "src": "0:993:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-10-22T22:37:20.259Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

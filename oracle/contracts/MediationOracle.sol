@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.5.16;
 
 import "./Ownable.sol";
 import "./DateLib.sol";
@@ -36,7 +36,7 @@ contract MediationOracle is Ownable {
         return (index > 0); 
     }
 
-    function addDispute(string _name, string _participants, uint8 _participantCount, uint _date) onlyOwner public returns (bytes32) {
+    function addDispute(string memory _name, string memory _participants, uint8 _participantCount, uint _date) onlyOwner public returns (bytes32) {
 
         bytes32 id = keccak256(abi.encodePacked(_name, _participantCount, _date));
 
@@ -64,7 +64,7 @@ contract MediationOracle is Ownable {
             theDispute.mediator = _mediator;
     }
 
-    function getPendingDisputes() public view returns (bytes32[]) {
+    function getPendingDisputes() public view returns (bytes32[] memory) {
         uint count = 0; 
 
         for (uint i = 0; i < disputes.length; i++) {
@@ -85,7 +85,7 @@ contract MediationOracle is Ownable {
         return output; 
     }
 
-    function getAllDisputes() public view returns (bytes32[]) {
+    function getAllDisputes() public view returns (bytes32[] memory) {
         bytes32[] memory output = new bytes32[](disputes.length);
 
         if (disputes.length > 0) {
@@ -100,8 +100,8 @@ contract MediationOracle is Ownable {
 
     function getDispute(bytes32 _disputeId) public view returns (
         bytes32 id,
-        string name, 
-        string participants,
+        string memory name,
+        string memory participants,
         uint8 participantCount,
         uint date, 
         DisputeOutcome outcome,
@@ -118,8 +118,8 @@ contract MediationOracle is Ownable {
 
     function getMostRecentDispute(bool _pending) public view returns (
         bytes32 id,
-        string name, 
-        string participants,
+        string memory name,
+        string memory participants,
         uint8 participantCount,
         uint date, 
         DisputeOutcome outcome,
@@ -145,7 +145,7 @@ contract MediationOracle is Ownable {
     }
 
     function getAddress() public view returns (address) {
-        return this;
+        return address(this);
     }
 
     function addTestData() external onlyOwner {
