@@ -785,29 +785,29 @@
 <h3><a id="user-content-language-features" class="anchor" aria-hidden="true" href="#language-features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Language Features</h3>
 <p>Solidity has many language features that are familiar to most modern programmers, as well as some that are distinct and (to me at least) unusual. It's said to have been inspired by C++, Python and JavaScript - all of which are well familiar to me personally, and yet Solidity seems quite distinct from any of those languages.</p>
 <h4><a id="user-content-contract" class="anchor" aria-hidden="true" href="#contract"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contract</h4>
-<p>The .sol file is the basic unit of code. In <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>, note the 9th line:</p>
-<p><code>contract BoxingOracle is Ownable {</code></p>
+<p>The .sol file is the basic unit of code. In <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a>, note the 9th line:</p>
+<p><code>contract MediationOracle is Ownable {</code></p>
 <p>As the class is the basic unit of logic in object-oriented languages, the contract is the basic unit of logic in Solidity. Suffice it to simplify it for now to say that the contract is the 'class' of Solidity (for object-oriented programmers this is an easy leap).</p>
 <h4><a id="user-content-inheritance" class="anchor" aria-hidden="true" href="#inheritance"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inheritance</h4>
 <p>Solidity contracts fully support inheritance, and it works as you'd expect; private contract members are not inherited, whereas protected and public ones are. Overloading and polymorphism are supported as you'd expect.</p>
-<p><code>contract BoxingOracle is Ownable {</code></p>
-<p>In the above statement, the "is" keyword is denoting inheritance. BoxingOracle inherits from Ownable. Multiple inheritance is also supported in Solidity. Multiple inheritance is indicated by a comma-delimited list of class names, like so:</p>
+<p><code>contract MediationOracle is Ownable {</code></p>
+<p>In the above statement, the "is" keyword is denoting inheritance. MediationOracle inherits from Ownable. Multiple inheritance is also supported in Solidity. Multiple inheritance is indicated by a comma-delimited list of class names, like so:</p>
 <p><code>contract Child is ParentA, ParentB, ParentC { ...</code></p>
 <p>While (in my opinion) it's not a good idea to get overly intricate with when structuring your inheritance model, here's an interesting article on Solidity in regard to the so-called "Diamond Problem":
 <a href="https://ethereum.stackexchange.com/questions/21060/multiple-inheritance-and-linearization" rel="nofollow">https://ethereum.stackexchange.com/questions/21060/multiple-inheritance-and-linearization</a></p>
 <h4><a id="user-content-enums" class="anchor" aria-hidden="true" href="#enums"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enums</h4>
 <p>Enums are supported in Solidity:</p>
-<p><code>enum MatchOutcome { Pending, //match has not been fought to decision Underway, //match has started &amp; is underway Draw, //anything other than a clear winner (e.g. cancelled) Decided //index of participant who is the winner }</code></p>
+<p><code>enum DisputeOutcome { Pending, //dispute has not been fought to decision Underway, //dispute has started &amp; is underway Draw, //anything other than a clear mediator (e.g. cancelled) Decided //index of participant who is the mediator }</code></p>
 <p>As you'd expect (not different from familiar languages), each enum value is assigned an integer value, beginning with 0. As stated in the Solidity docs, enum values are convertible to all integer types (e.g. uint, uint16, uint32, etc), but implicit conversion is not allowed. Which means that they must be cast explicity (to uint, for example).</p>
 <p><a href="https://solidity.readthedocs.io/en/develop/types.html#enums" rel="nofollow">Solidity Docs: Enums</a></p>
 <p><a href="https://boostlog.io/@bily809/solidity-tutorial-5-5abf43ed0814730093a2f00e" rel="nofollow">Enums Tutorial</a></p>
 <h4><a id="user-content-structs" class="anchor" aria-hidden="true" href="#structs"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structs</h4>
-<p>Structs are another way, like enums, to create a user-defined data type. Structs are familiar to all C/C++ foundation coders and old guys such as myself. An example of a struct, from line 17 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:</p>
-<p><code>//defines a match along with its outcome struct Match { bytes32 id; string name; string participants; uint8 participantCount; uint date; MatchOutcome outcome; int8 winner; }</code></p>
+<p>Structs are another way, like enums, to create a user-defined data type. Structs are familiar to all C/C++ foundation coders and old guys such as myself. An example of a struct, from line 17 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a>:</p>
+<p><code>//defines a dispute along with its outcome struct Dispute { bytes32 id; string name; string participants; uint8 participantCount; uint date; DisputeOutcome outcome; int8 mediator; }</code></p>
 <p>Note to all old C programmers: struct "packing" in Solidity is a thing, but there are some rules and caveats. Don't necessarily assume that it works the same as in C; check the docs and be aware of your situation, to ascertain whether or not packing is going to help you in a given case.</p>
 <p><a href="https://solidity.readthedocs.io/en/v0.4.21/miscellaneous.html" rel="nofollow">Solidity Struct Packing</a></p>
 <p>Once created, structs can be addressed in your code as native data types. Here's an example of the syntax for 'instantiation' of the struct type created above:</p>
-<p><code>Match match = Match(id, "A vs. B", "A|B", 2, block.timestamp, MatchOutcome.Pending, 1);</code></p>
+<p><code>Dispute dispute = Dispute(id, "A vs. B", "A|B", 2, block.timestamp, DisputeOutcome.Pending, 1);</code></p>
 <h4><a id="user-content-data-types" class="anchor" aria-hidden="true" href="#data-types"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data Types</h4>
 <p>This brings us to the very basic subject of data types in Solidity. What data types does solidity support? Solidity is statically-typed, and at the time of this writing data types must be explicitly declared and bound to variables.</p>
 <p><a href="https://solidity.readthedocs.io/en/v0.4.24/types.html" rel="nofollow">Solidity Data Types</a></p>
@@ -825,44 +825,44 @@
 <p>My opinion: it might be a fun exercise to write your own string type and publish it for general use.</p>
 <h5><a id="user-content-address-type" class="anchor" aria-hidden="true" href="#address-type"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Address Type</h5>
 <p>Unique perhaps to Solidity, we have an <em>address</em> datatype, specifically for Ethereum wallet or contract addresses. It's a 20 byte value specifically for storing addresses of that particular size. In addition, it has type members specifically for addresses of that kind.</p>
-<p><code>address internal boxingOracleAddr = 0x145ca3e014aaf5dca488057592ee45305d9b3a22;</code></p>
+<p><code>address internal mediationOracleAddr = 0x145ca3e014aaf5dca488057592ee45305d9b3a22;</code></p>
 <p><a href="https://ethereum.stackexchange.com/questions/34024/when-exactly-address-datatype-should-be-used" rel="nofollow">Address Data Types</a></p>
 <h5><a id="user-content-datetime-types" class="anchor" aria-hidden="true" href="#datetime-types"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DateTime Types</h5>
-<p>There is no native Date or DateTime type in Solidity per se, as there is in Javascript for example (oh no, Solidity's sounding worse &amp; worse with every paragraph!?). Dates are natively addressed as timestamps of type uint (uint256). They are generally handles as Unix-style timestamps (seconds rather than milliseconds), as the block timestamp is a unix-style timestamp. In cases where you find yourself needing human-readable dates for various reasons, there are open-source libraries available. You might notice that I've used one in BoxingOracle:
+<p>There is no native Date or DateTime type in Solidity per se, as there is in Javascript for example (oh no, Solidity's sounding worse &amp; worse with every paragraph!?). Dates are natively addressed as timestamps of type uint (uint256). They are generally handles as Unix-style timestamps (seconds rather than milliseconds), as the block timestamp is a unix-style timestamp. In cases where you find yourself needing human-readable dates for various reasons, there are open-source libraries available. You might notice that I've used one in MediationOracle:
 <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/DateLib.sol">DateLib.sol</a>. OpenZeppelin also has date utilities as well as many other types of general utility libraries (We'll get to the <em>library</em> feature of Solidity shortly).
 Pro tip: <a href="https://openzeppelin.org/" rel="nofollow">OpenZeppelin</a> is a good source (but of course not the only good source) for both knowldege and pre-written generic code that may help you to build your contracts up.</p>
 <h4><a id="user-content-mappings" class="anchor" aria-hidden="true" href="#mappings"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mappings</h4>
-<p>Notice that line 11 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a> defines something called a <em>mapping</em>:</p>
-<p><code>mapping(bytes32 =&gt; uint) matchIdToIndex;</code></p>
+<p>Notice that line 11 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a> defines something called a <em>mapping</em>:</p>
+<p><code>mapping(bytes32 =&gt; uint) disputeIdToIndex;</code></p>
 <p>A mapping in Solidity is a special data type for quick lookups; essentially a lookup table or similar to a hashtable, wherein (in this case) the data contained lives on the blockchain itself (when the mapping is defined, as it is here, as a class member). During the course of the contract's execution, we can add data to the mapping (similar to adding data to a hashtable), and later look up those values that we've added. Note again that in this case, the data that we addd is added to the blockchain itself, so it will persist. If we add it to the mapping today in New York, some guy a week from now in Istanbul can read it.</p>
-<p>Example of adding to the mapping, from line 71 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:</p>
-<p><code>matchIdToIndex[id] = newIndex+1</code></p>
-<p>Example of reading from the mapping, from line 51 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:
-<code>uint index = matchIdToIndex[_matchId];</code></p>
+<p>Example of adding to the mapping, from line 71 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a>:</p>
+<p><code>disputeIdToIndex[id] = newIndex+1</code></p>
+<p>Example of reading from the mapping, from line 51 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a>:
+<code>uint index = disputeIdToIndex[_disputeId];</code></p>
 <p>Items can also be removed from the mapping. It's not used in this project, but it would look like this:</p>
-<p><code>delete matchIdToIndex[_matchId];</code></p>
+<p><code>delete disputeIdToIndex[_disputeId];</code></p>
 <h4><a id="user-content-return-values" class="anchor" aria-hidden="true" href="#return-values"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Return Values</h4>
-<p>As you may have noticed, Solidity may have a bit of a superficial resemblance to Javascript, but it does not inherit much of Javascript's looseness of types and definitions. A contract code must be defined in a rather strict and restricted manner (and this is probably a good thing, considering the use case). With that in mind, consider the function definition from line 40 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a></p>
-<p><code>function _getMatchIndex(bytes32 _matchId) private view returns (uint) { ... }</code></p>
-<p>Ok so, let's first just do a quick overview of what's contained here. <em>function</em> marks it as a function. <em>_getMatchIndex</em> is the function name (the underscore is a convention that indicates a private member - we will discuss later). It takes one argument, named <em>_matchId</em> (this time the underscore convention is used to denote function arguments) of type <em>bytes32</em>. The keyword <em>private</em> actually makes the member private in scope, <em>view</em> tells the compiler that this function does not modify any data on the blockchain, and finally:</p>
+<p>As you may have noticed, Solidity may have a bit of a superficial resemblance to Javascript, but it does not inherit much of Javascript's looseness of types and definitions. A contract code must be defined in a rather strict and restricted manner (and this is probably a good thing, considering the use case). With that in mind, consider the function definition from line 40 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a></p>
+<p><code>function _getDisputeIndex(bytes32 _disputeId) private view returns (uint) { ... }</code></p>
+<p>Ok so, let's first just do a quick overview of what's contained here. <em>function</em> marks it as a function. <em>_getDisputeIndex</em> is the function name (the underscore is a convention that indicates a private member - we will discuss later). It takes one argument, named <em>_disputeId</em> (this time the underscore convention is used to denote function arguments) of type <em>bytes32</em>. The keyword <em>private</em> actually makes the member private in scope, <em>view</em> tells the compiler that this function does not modify any data on the blockchain, and finally:</p>
 <p><code>returns (uint)</code></p>
 <p>This says that the function returns a uint (a function that returns void would simply have no <em>returns</em> clause here). Why is uint in parentheses? That's because Solidity functions can and often do return <em>typles</em>.</p>
 <p>Consider now, the following definition from line 166:</p>
-<p><code>function getMostRecentMatch(bool _pending) public view returns ( bytes32 id, string name, string participants, uint8 participantCount, uint date, MatchOutcome outcome, int8 winner) { ... }</code></p>
+<p><code>function getMostRecentDispute(bool _pending) public view returns ( bytes32 id, string name, string participants, uint8 participantCount, uint date, DisputeOutcome outcome, int8 mediator) { ... }</code></p>
 <p>Check out the return clause on this one! It returns one, two... 7 different things. Ok so, this function returns these things as a tuple. Why? In the course of developing, you will often find yourself needing to return a struct (if it was Javascript you'd want to return a json object, probably). Well, as of this writing (in the future this may change) Solidity doesn't support returning structs from public functions. So you have to return tuples instead. If you're a Python guy you may be comfortable with tuples already. Many languages don't really support them though, at least not in this way.</p>
 <p>See line 159 for an example of returning a tuple as a return value:</p>
-<p><code>return (_matchId, "", "", 0, 0, MatchOutcome.Pending, -1);</code></p>
+<p><code>return (_disputeId, "", "", 0, 0, DisputeOutcome.Pending, -1);</code></p>
 <p>And how do we accept the return value of something like this? We can do like so:</p>
-<p><code>var (id, name, part, count, date, outcome, winner) = getMostRecentMatch(false);</code></p>
+<p><code>var (id, name, part, count, date, outcome, mediator) = getMostRecentDispute(false);</code></p>
 <p>Alternatively, you can declare the variables explicitly beforehand, with their correct types:</p>
 <p>`
 //declare the variables
 bytes32 id;
 string name;</p>
 <p>... etc...</p>
-<p>int8 winner;</p>
+<p>int8 mediator;</p>
 <p>//assign their values
-(id, name, part, count, date, outcome, winner) = getMostRecentMatch(false);
+(id, name, part, count, date, outcome, mediator) = getMostRecentDispute(false);
 `</p>
 <p>And now we have declared 7 variables to hold the 7 return values, which we can now use. Otherwise, supposing that we wanted just only one or two of the values, we can say:</p>
 <p>`
@@ -870,23 +870,23 @@ string name;</p>
 bytes32 id;
 uint date;</p>
 <p>//assign their values
-(id,,,,date,,) = getMostRecentMatch(false);
+(id,,,,date,,) = getMostRecentDispute(false);
 `</p>
 <p>See what we did there? We got just the two that we were interested in. Check out all of those commas ... we have to count them carefully!</p>
 <h4><a id="user-content-imports" class="anchor" aria-hidden="true" href="#imports"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Imports</h4>
-<p>Lines 3 and 4 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a> are imports:</p>
+<p>Lines 3 and 4 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a> are imports:</p>
 <p><code>import "./Ownable.sol"; import "./DateLib.sol";</code>
-As you probably expect, these are importing definitions from code files that exist in the same contracts project folder as BoxingOracle.sol.</p>
+As you probably expect, these are importing definitions from code files that exist in the same contracts project folder as MediationOracle.sol.</p>
 <h4><a id="user-content-modifiers" class="anchor" aria-hidden="true" href="#modifiers"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modifiers</h4>
 <p>Notice that the function definitions have a bunch of modifiers attached. First, there is visibility: private, public, internal, and external. <a href="https://forum.ethereum.org/discussion/3344/function-visibility-whats-the-difference-between-private-and-internal-if-any" rel="nofollow">function visibility</a>.</p>
 <p>Furthermore, you'll see keywords <em>pure</em> and <em>view</em>. These indicate to the compiler what sort of changes the function will make, if any. This is important because such a thing is a factor in the final gas cost of running the function. See here for explanation:
 <a href="https://solidity.readthedocs.io/en/v0.4.24/contracts.html" rel="nofollow">Solidity Docs</a></p>
-<p>Finally, what I really want to discuss, are custom modifiers. Have a look at line 61 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:</p>
-<p><code>function addMatch(string _name, string _participants, uint8 _participantCount, uint _date) onlyOwner public returns (bytes32) {</code></p>
+<p>Finally, what I really want to discuss, are custom modifiers. Have a look at line 61 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a>:</p>
+<p><code>function addDispute(string _name, string _participants, uint8 _participantCount, uint _date) onlyOwner public returns (bytes32) {</code></p>
 <p>Note the <em>onlyOwner</em> modifier just before the "public" keyword. This indicates that <em>only the owner</em> of the contract may call this method! While very important, this is not a native feature of Solidity (though maybe it will be in the future). Actually, "onlyOwner" is an example of a custom modifier that we create ourselves, and use. Let's have a look.</p>
-<p>First, the modifier is defined in the file <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/Ownable.sol">Ownable.sol</a>, which you can see we have imported on line 3 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:</p>
+<p>First, the modifier is defined in the file <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/Ownable.sol">Ownable.sol</a>, which you can see we have imported on line 3 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a>:</p>
 <p><code>import "./Ownable.sol"</code></p>
-<p>Note that, in order to make use of the modifier, we've made <em>BoxingOracle</em> inherit from <em>Ownable</em>. Inside of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/Ownable.sol">Ownable.sol</a>, on line 25, we can find the definition for the modifier inside of the <em>Ownable</em> contract:</p>
+<p>Note that, in order to make use of the modifier, we've made <em>MediationOracle</em> inherit from <em>Ownable</em>. Inside of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/Ownable.sol">Ownable.sol</a>, on line 25, we can find the definition for the modifier inside of the <em>Ownable</em> contract:</p>
 <p><code>modifier onlyOwner() { require(msg.sender == owner); _; }</code></p>
 <p>(this Ownable contract, by the way, is taken from one of <a href="https://openzeppelin.org/" rel="nofollow">OpenZeppelin</a>'s public contracts)</p>
 <p>Note that this thing is declared as a modifier, indicating that we can use it as we have, to modify a function. Note that the meat of the modifier is a 'require' statement. Require statements are kind of like asserts, but not for debugging. If the condition of the require statement fails, then the function will throw an exception. So to paraphrase this "require" statement:</p>
@@ -901,7 +901,7 @@ As you probably expect, these are importing definitions from code files that exi
 <p>There are of course more things that you can do with modifiers. Check the docs: <a href="https://solidity.readthedocs.io/en/v0.4.24/common-patterns.html" rel="nofollow">Docs</a></p>
 <h2><a id="user-content-libraries" class="anchor" aria-hidden="true" href="#libraries"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Libraries</h2>
 <p>There is a language feature of Solidity known as the <em>library</em>. We have an example in our project, at <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/DateLib.sol">DateLib.sol</a>.</p>
-<p>This is a library for better easier handling of date types. It's imported into BoxingOracle at line 4:</p>
+<p>This is a library for better easier handling of date types. It's imported into MediationOracle at line 4:</p>
 <p><code>import "./DateLib.sol";</code></p>
 <p>... and it's used at line 13:</p>
 <p><code>using DateLib for DateLib.DateTime;</code></p>
@@ -916,151 +916,151 @@ As you probably expect, these are importing definitions from code files that exi
 <p>So, let's clarify the purpose of this project, once again. The purpose of this project is to provide a semi-realistic (or pseudo-realistic) demonstration and example of a smart contract that uses an oracle. At its heart, this is just a contract calling into another separate contract.</p>
 <p>The business case of the example can be stated as such:</p>
 <ul>
-<li>A user wants to make bets of varying sizes on boxing matches, paying money (ether) for the bets and collecting his/her winnings when and if he/she wins.</li>
-<li>A user makes these bets via a smart contract (in a real-life use case, this would be a full DApp with a web3 front end; but we are only examining the contracts side)</li>
-<li>A separate smart contract - the oracle - is maintained by a third party. Its job is to maintain a list of boxing matches with their current states (pending, in progress, finished, etc.) and, if finished, the winner.</li>
-<li>The main contract gets lists of pending matches from the oracle, and presents these to users as "bettable" matches.</li>
-<li>The main contract accepts bets up until the start of a match</li>
-<li>After a match is decided, the main contract divvies up the winnings and losings according to a simple algorithm, takes a cut for itself, and pays out the winnings upon request (losers simply lose their entire stake).</li>
+<li>A user wants to make offers of varying sizes on mediation disputes, paying money (ether) for the offers and collecting his/her winnings when and if he/she wins.</li>
+<li>A user makes these offers via a smart contract (in a real-life use case, this would be a full DApp with a web3 front end; but we are only examining the contracts side)</li>
+<li>A separate smart contract - the oracle - is maintained by a third party. Its job is to maintain a list of mediation disputes with their current states (pending, in progress, finished, etc.) and, if finished, the mediator.</li>
+<li>The main contract gets lists of pending disputes from the oracle, and presents these to users as "Resolvable" disputes.</li>
+<li>The main contract accepts offers up until the start of a dispute</li>
+<li>After a dispute is decided, the main contract divvies up the winnings and losings according to a simple algorithm, takes a cut for itself, and pays out the winnings upon request (losers simply lose their entire stake).</li>
 </ul>
-<p>The betting rules:</p>
+<p>The resolution rules:</p>
 <ul>
 <li>There is a defined, minimum bet (defined in wei)</li>
 <li>There is no maximum bet; users can bet any amount that they like, above the minimum</li>
-<li>Users can place bets up until such time as the match becomes "in progress"</li>
+<li>Users can place offers up until such time as the dispute becomes "in progress"</li>
 </ul>
 <p>Algorithm for dividing the winnings:</p>
 <ul>
-<li>All bets received are placed into a "pot"</li>
+<li>All offers received are placed into a "pot"</li>
 <li>A small percentage is removed from the pot, for the house</li>
-<li>Each winner gets awarded a proportion of the pot, directly proportional to the relative size of their bets</li>
-<li>Winnings are calculated as soon as the very first user requests the results, after the match is decided</li>
+<li>Each mediator gets awarded a proportion of the pot, directly proportional to the relative size of their offers</li>
+<li>Winnings are calculated as soon as the very first user requests the results, after the dispute is decided</li>
 <li>Winnings are awarded upon request by the user</li>
 <li>In case of a draw, no one wins - everyone gets their stake back, and the house takes no cut</li>
 </ul>
 <p><a target="_blank" rel="noopener noreferrer" href="/jrkosinski/oracle-example/blob/part2-step1/images/oracle-flow.png"><img src="/jrkosinski/oracle-example/raw/part2-step1/images/oracle-flow.png" alt="architecture" style="max-width:100%;"></a></p>
-<h2><a id="user-content-boxingoracle-the-oracle-contract" class="anchor" aria-hidden="true" href="#boxingoracle-the-oracle-contract"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BoxingOracle: the Oracle Contract</h2>
+<h2><a id="user-content-mediationoracle-the-oracle-contract" class="anchor" aria-hidden="true" href="#mediationoracle-the-oracle-contract"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MediationOracle: the Oracle Contract</h2>
 <h3><a id="user-content-main-functions-provided" class="anchor" aria-hidden="true" href="#main-functions-provided"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Main Functions Provided</h3>
 <p>The oracle has two interfaces, you could say: one presented to the "owner" and maintainer of the contract, and one presented to the general public; that is, contracts which consume the oracle. The the maintainer, it offers functionality for feeding data into the contract; essentially taking data from the outside world and putting it onto the blockchain. To the public, it offers read-only access to said data. It's important to note that the contract itself restricts non-owners from editing any data, but read-only access to that data is publicly granted without restriction.</p>
 <p>To users:</p>
 <ul>
-<li>List all matches</li>
-<li>List pending matches</li>
-<li>Get details of a specific match</li>
-<li>Get status and outcome of a specific match</li>
+<li>List all disputes</li>
+<li>List pending disputes</li>
+<li>Get details of a specific dispute</li>
+<li>Get status and outcome of a specific dispute</li>
 </ul>
 <p>To owner:</p>
 <ul>
-<li>Enter a match</li>
-<li>Change status of match</li>
-<li>Set outcome of match</li>
+<li>Enter a dispute</li>
+<li>Change status of dispute</li>
+<li>Set outcome of dispute</li>
 </ul>
 <p>User story:</p>
 <ul>
-<li>A new boxing match is announced and confirmed for May 9th.</li>
-<li>I, the contract's maintainer (perhaps I am a well-known sports network or a new outlet), add the upcoming match to the oracle's data on the blockchain, with the status "pending". Anyone or any contract may now query and use this data however they like.</li>
-<li>When the match begins, I set the status of that match to "in progress".</li>
-<li>When the match ends, I set the status of the match to "completed", and modify the match data to denote the winner.</li>
+<li>A new mediation dispute is announced and confirmed for May 9th.</li>
+<li>I, the contract's maintainer (perhaps I am a well-known sports network or a new outlet), add the upcoming dispute to the oracle's data on the blockchain, with the status "pending". Anyone or any contract may now query and use this data however they like.</li>
+<li>When the dispute begins, I set the status of that dispute to "in progress".</li>
+<li>When the dispute ends, I set the status of the dispute to "completed", and modify the dispute data to denote the mediator.</li>
 </ul>
 <h3><a id="user-content-oracle-code-review" class="anchor" aria-hidden="true" href="#oracle-code-review"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Oracle Code Review</h3>
-<p>This review is based entirely on <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>; line numbers reference that file.</p>
-<p>On lines 10 and 11, we declare our storage place for Matches:</p>
-<p><code>Match[] matches; mapping(bytes32 =&gt; uint) matchIdToIndex;</code></p>
-<p><em>matches</em> is just a simple array for storing Match instances, and the mapping is just a facility for mapping a unique match id (a bytes32 value) to its index in the array. So that if someone hands us a raw id of a match, we can use this mapping to locate it.</p>
-<p>On line 17, our Match structure is defined and explained:</p>
+<p>This review is based entirely on <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/MediationOracle.sol">MediationOracle.sol</a>; line numbers reference that file.</p>
+<p>On lines 10 and 11, we declare our storage place for Disputes:</p>
+<p><code>Dispute[] disputes; mapping(bytes32 =&gt; uint) disputeIdToIndex;</code></p>
+<p><em>disputes</em> is just a simple array for storing Dispute instances, and the mapping is just a facility for mapping a unique dispute id (a bytes32 value) to its index in the array. So that if someone hands us a raw id of a dispute, we can use this mapping to locate it.</p>
+<p>On line 17, our Dispute structure is defined and explained:</p>
 <p>`
-//defines a match along with its outcome
-struct Match {
+//defines a dispute along with its outcome
+struct Dispute {
 bytes32 id;             //unique id
 string name;            //human-friendly name (e.g. Jones vs. Holloway)
 string participants;    //a delimited string of participant names
-uint8 participantCount; //number of participants (always 2 for boxing matches!)
+uint8 participantCount; //number of participants (always 2 for mediation disputes!)
 uint date;              //GMT timestamp of date of contest
-MatchOutcome outcome;   //the outcome (if decided)
-int8 winner;            //index of the participant who is the winner
+DisputeOutcome outcome;   //the outcome (if decided)
+int8 mediator;            //index of the participant who is the mediator
 }</p>
-<pre><code>//possible match outcomes 
-enum MatchOutcome {    
-    Pending,    //match has not been fought to decision       
-    Underway,   //match has started &amp; is underway        
-    Draw,       //anything other than a clear winner (e.g. cancelled)        
-    Decided     //index of participant who is the winner         
+<pre><code>//possible dispute outcomes
+enum DisputeOutcome {
+    Pending,    //dispute has not been fought to decision
+    Underway,   //dispute has started &amp; is underway
+    Draw,       //anything other than a clear mediator (e.g. cancelled)
+    Decided     //index of participant who is the mediator
 }
 </code></pre>
 <p>`</p>
-<p>Line 61: function <em>addMatch</em> is for use only by the contract owner; it allows for the addition of a new match to the stored data.</p>
-<p>Line 80: function <em>declareOutcome</em> allows the contract owner to set a match as "decided", setting the participant who won.</p>
+<p>Line 61: function <em>addDispute</em> is for use only by the contract owner; it allows for the addition of a new dispute to the stored data.</p>
+<p>Line 80: function <em>declareOutcome</em> allows the contract owner to set a dispute as "decided", setting the participant who won.</p>
 <p>Lines 102-166: the following functions are all callable by the public. This is the read-only data that is open to the public in general:</p>
 <ul>
-<li>function *getPendingMatches" returns a list of ids of all matches whose current state is Pending.</li>
-<li>function <em>getAllMatches</em> returns a list of ids of all matches.</li>
-<li>function <em>getMatch</em> returns the full details of a single match, specified by id.</li>
+<li>function *getPendingDisputes" returns a list of ids of all disputes whose current state is Pending.</li>
+<li>function <em>getAllDisputes</em> returns a list of ids of all disputes.</li>
+<li>function <em>getDispute</em> returns the full details of a single dispute, specified by id.</li>
 </ul>
 <p>Lines 193-204 declare functions that are mainly for testing, debugging, and diagnostics.</p>
 <ul>
 <li>function <em>testConnection</em> just tests that we are able to call the contract</li>
 <li>function <em>getAddress</em> returns the address of this contract</li>
-<li>function <em>addTestData</em> adds a bunch of test matches to the list of matches</li>
+<li>function <em>addTestData</em> adds a bunch of test disputes to the list of disputes</li>
 </ul>
 <p>Feel free to explore around the code a bit before moving on to the next steps. I suggest running the oracle contract again in debug mode (as described in Part 1 of this series), call different functions, and examine the results.</p>
-<h2><a id="user-content-boxingbets-the-client-contract" class="anchor" aria-hidden="true" href="#boxingbets-the-client-contract"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BoxingBets: the Client Contract</h2>
-<p>It's important to define what the client contract (the betting contract) is responsible for, and what it's not responsible for. The client contract is <em>not</em> responsible for maintaining lists of real boxing matches or declaring their outcomes. We "trust" (yes I know, there's that sensitive word - uh oh - we will discuss in Part 3) the oracle for that service. The client contract is responsible for accepting bets. It's responsible for the algorithm that divvies up the winnings, and transfers them to the winners' accounts, based on the outcome of the match (as received from the oracle).</p>
-<p>Furthermore, everything is pull-based, there are no events or pushes. The contract pulls data in from the oracle. The contract pulls the outcome of the match from the oracle (in response to user request), and the contract calculates winnings and transfers them in response to user request.</p>
+<h2><a id="user-content-mediationoffers-the-client-contract" class="anchor" aria-hidden="true" href="#mediationoffers-the-client-contract"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MediationOffers: the Client Contract</h2>
+<p>It's important to define what the client contract (the resolution contract) is responsible for, and what it's not responsible for. The client contract is <em>not</em> responsible for maintaining lists of real mediation disputes or declaring their outcomes. We "trust" (yes I know, there's that sensitive word - uh oh - we will discuss in Part 3) the oracle for that service. The client contract is responsible for accepting offers. It's responsible for the algorithm that divvies up the winnings, and transfers them to the mediators' accounts, based on the outcome of the dispute (as received from the oracle).</p>
+<p>Furthermore, everything is pull-based, there are no events or pushes. The contract pulls data in from the oracle. The contract pulls the outcome of the dispute from the oracle (in response to user request), and the contract calculates winnings and transfers them in response to user request.</p>
 <h3><a id="user-content-main-functions-provided-1" class="anchor" aria-hidden="true" href="#main-functions-provided-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Main Functions Provided</h3>
 <ul>
-<li>List all pending matches</li>
-<li>Get details of a specific match</li>
-<li>Get status and outcome of a specific match</li>
+<li>List all pending disputes</li>
+<li>Get details of a specific dispute</li>
+<li>Get status and outcome of a specific dispute</li>
 <li>Place a bet</li>
 <li>Request/receive winnings</li>
 </ul>
 <h3><a id="user-content-client-code-review" class="anchor" aria-hidden="true" href="#client-code-review"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client Code Review</h3>
-<p>This review is based entirely on <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/BoxingBets.sol">BoxingBets.sol</a>; line numbers reference that file.</p>
+<p>This review is based entirely on <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/MediationOffers.sol">MediationOffers.sol</a>; line numbers reference that file.</p>
 <p>Lines 12 and 13, the first lines of code in the contract, define some mappings in which we'll store our contract's data.
-Line 12 maps user addresses to lists of ids. This is mapping a user to a list of ids of bets which belong to the user. So, for any given user address, we can quickly get a list of all bets that have been made by that user.</p>
-<p><code>mapping(address =&gt; bytes32[]) private userToBets;</code></p>
-<p>Line 13 maps a match's unique id, to a list of Bet instances. With this we can, for any given match, get a list of all bets that have been made for that match.</p>
-<p><code>mapping(bytes32 =&gt; Bet[]) private matchToBets;</code></p>
-<p>Lines 17 and 18 are related to the connection to our oracle. First, in the <em>boxingOracleAddr</em> variable, we store the address of the oracle contract (set to zero by default). We could hard-code the oracle's address, but then we'd never be able to change it (not being able to change the oracle's address could be a good or bad thing - we can discuss in Part 3). The next line creates an instance of the oracle's interface (which is defined in <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/OracleInterface.sol">OracleInterface.sol</a>) and stores it in a variable.</p>
-<p><code>//boxing results oracle address internal boxingOracleAddr = 0; OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr);</code></p>
-<p>If you jump ahead to line 58, you'll see the <em>setOracleAddress</em> function, in which this oracle address can be changed, and in which the <em>boxingOracle</em> instance is re-instantiated with a new address.</p>
+Line 12 maps user addresses to lists of ids. This is mapping a user to a list of ids of offers which belong to the user. So, for any given user address, we can quickly get a list of all offers that have been made by that user.</p>
+<p><code>mapping(address =&gt; bytes32[]) private userToOffers;</code></p>
+<p>Line 13 maps a dispute's unique id, to a list of Bet instances. With this we can, for any given dispute, get a list of all offers that have been made for that dispute.</p>
+<p><code>mapping(bytes32 =&gt; Bet[]) private disputeToOffers;</code></p>
+<p>Lines 17 and 18 are related to the connection to our oracle. First, in the <em>mediationOracleAddr</em> variable, we store the address of the oracle contract (set to zero by default). We could hard-code the oracle's address, but then we'd never be able to change it (not being able to change the oracle's address could be a good or bad thing - we can discuss in Part 3). The next line creates an instance of the oracle's interface (which is defined in <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/OracleInterface.sol">OracleInterface.sol</a>) and stores it in a variable.</p>
+<p><code>//mediation results oracle address internal mediationOracleAddr = 0; OracleInterface internal mediationOracle = OracleInterface(mediationOracleAddr);</code></p>
+<p>If you jump ahead to line 58, you'll see the <em>setOracleAddress</em> function, in which this oracle address can be changed, and in which the <em>mediationOracle</em> instance is re-instantiated with a new address.</p>
 <p>Line 21 defines our minimum bet size, in <strong>wei</strong>. This is of course actually a very small amount, just 0.000001 ether.</p>
 <p><a target="_blank" rel="noopener noreferrer" href="/jrkosinski/oracle-example/blob/part2-step1/images/nowei.jpg"><img src="/jrkosinski/oracle-example/raw/part2-step1/images/nowei.jpg" alt="wei" style="max-width:100%;"></a></p>
-<p><code>uint internal minimumBet = 1000000000000;</code></p>
+<p><code>uint internal minimumOffer = 1000000000000;</code></p>
 <p>On lines 58 and 66 respectively, we have the <em>setOracleAddress</em> and the <em>getOracleAddress</em> functions. The <em>setOracleAddress</em> has the <em>onlyOwner</em> modifier, because only the owner of the contract can switch out the oracle for another oracle (probably not a good idea! but we will discuss in Part 3). The <em>getOracleAddress</em> function, on the other hand, is publicly callable; anyone can see what oracle is being used.</p>
 <p>`
 function setOracleAddress(address _oracleAddress) external onlyOwner returns (bool) {...</p>
 <p>function getOracleAddress() external view returns (address) { ....
 `</p>
-<p>On lines 72 and 79, we have the <em>getBettableMatches</em> and <em>getMatch</em> functions, respectively. Note that these are simply forwarding the calls on to the oracle, and returning the result.</p>
+<p>On lines 72 and 79, we have the <em>getResolvableDisputes</em> and <em>getDispute</em> functions, respectively. Note that these are simply forwarding the calls on to the oracle, and returning the result.</p>
 <p>`
-function getBettableMatches() public view returns (bytes32[]) {...</p>
-<p>function getMatch(bytes32 _matchId) public view returns ( ....
+function getResolvableDisputes() public view returns (bytes32[]) {...</p>
+<p>function getDispute(bytes32 _disputeId) public view returns ( ....
 `</p>
-<p>The <em>placeBet</em> function is a very important one (line 108).</p>
-<p><code>function placeBet(bytes32 _matchId, uint8 _chosenWinner) public payable { ...</code></p>
+<p>The <em>makeOffer</em> function is a very important one (line 108).</p>
+<p><code>function makeOffer(bytes32 _disputeId, uint8 _offerValue) public payable { ...</code></p>
 <p>A striking feature of this one is the <em>payable</em> modifier; we've been so busy discussing general language features that we have not yet touched upon the centrally important feature of being able to send money along with function calls! That's basically what it is - it's a function which can accept an amount of money along with any other arguments and data sent.</p>
 <p>We need this here because this is where the user simultaneously defines what bet they're going to make, how much money they intend to have riding on that bet, and actually send the money. The <em>payable</em> modifier enables that. Before accepting the bet, we do a bunch of checks to ensure the validity of the bet. The first check on line 111 is:</p>
-<p><code>require(msg.value &gt;= minimumBet, "Bet amount must be &gt;= minimum bet");</code></p>
+<p><code>require(msg.value &gt;= minimumOffer, "Bet amount must be &gt;= minimum bet");</code></p>
 <p>The amount of money sent is stored in <em>msg.value</em>. Assuming that all of the checks pass, on line 123 we will transfer that amount into ownership of the oracle, taking ownership of that amount away from the user, and into the contract's possession:</p>
 <p><code>address(this).transfer(msg.value);</code></p>
 <p>Finally, on line 136, we have a testing/debugging helper function that will help us to know whether or not the contract is connected to a valid oracle:</p>
-<p><code>function testOracleConnection() public view returns (bool) { return boxingOracle.testConnection(); }</code></p>
+<p><code>function testOracleConnection() public view returns (bool) { return mediationOracle.testConnection(); }</code></p>
 <h2><a id="user-content-conclusion" class="anchor" aria-hidden="true" href="#conclusion"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion</h2>
 <p><em>And this is actually as far as this example goes; just accepting the bet.</em> The functionality for dividing up the winnings and paying out, as well as some other logic was intentionally left out, in order to keep the example simple enough for our purpose, which is simply to demonstrate the use of an oracle with a contract. That more complete and complex logic exists in another project currently, which is an extension of this example and is still in development.</p>
 <p>So now we have a better understanding of the codebase, and have used it as a vehicle and jumping-off point to discuss some of the language features offered by Solidity. The main purpose of this three-part series is to demonstrate and discuss the use of a contract with an oracle. The purpose of this part is to understand this specific code a little bit better, and to use it as an embarkation point into understanding some features of Solidity and smart contract development. The purpose of the third and final part will be to discuss the strategy and philosophy of oracle usage, and how it fits conceptually into the smart contract model.</p>
 <h2><a id="user-content-further-optional-steps" class="anchor" aria-hidden="true" href="#further-optional-steps"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Further Optional Steps</h2>
-<p>I would highly encourage readers who wish to learn more, to take this code and play with it. Implement new features. Fix any bugs. Implement un-implemented features (such as the payment interface). Test the function calls. Modify them and retest to see what happens. Add a web3 front end. Add a facility for removing matches, or modifying their outcomes (in case of mistake). What about cancelled matches? Implement a second oracle... of course a contract is free to use as many oracles as it likes, but what problems does that incur? Have fun with it; that's a great way to learn, and when you do it that way (and derive enjoyment from it) you're sure to retain more of what you've learned.</p>
+<p>I would highly encourage readers who wish to learn more, to take this code and play with it. Implement new features. Fix any bugs. Implement un-implemented features (such as the payment interface). Test the function calls. Modify them and retest to see what happens. Add a web3 front end. Add a facility for removing disputes, or modifying their outcomes (in case of mistake). What about cancelled disputes? Implement a second oracle... of course a contract is free to use as many oracles as it likes, but what problems does that incur? Have fun with it; that's a great way to learn, and when you do it that way (and derive enjoyment from it) you're sure to retain more of what you've learned.</p>
 <p>A sample, non-comprehensive list of things to try:</p>
 <ul>
 <li>run both the contract and the oracle in local testnet (in truffle, as described in Part 1) and call all callable functions, and all test functions.</li>
-<li>add functionality for calculating the winnings and paying them out, on completion of a match</li>
-<li>add functionality for refunding all bets in case of draw</li>
-<li>add a feature to request a refund or cancellation a bet, before the match begins</li>
-<li>add a feature to allow for the fact that matches can sometimes get cancelled (and everyone will need a refund in that case)</li>
-<li>implement a feature to guarantee that the oracle that was in place when a user placed a bet, is the same oracle that will be used to determine the outcome of that match</li>
-<li>implement another (second) oracle, which has some different features associated with it, or possibly serves a sport other than boxing (note that the participants count and list allows for different types of sports, so we're not actually restricted to just boxing)</li>
-<li>implement getMostRecentMatch so that it actually returns either the most recently added match, or the match that's closest to the current date in terms of when it will occur</li>
+<li>add functionality for calculating the winnings and paying them out, on completion of a dispute</li>
+<li>add functionality for refunding all offers in case of draw</li>
+<li>add a feature to request a refund or cancellation a bet, before the dispute begins</li>
+<li>add a feature to allow for the fact that disputes can sometimes get cancelled (and everyone will need a refund in that case)</li>
+<li>implement a feature to guarantee that the oracle that was in place when a user placed a bet, is the same oracle that will be used to determine the outcome of that dispute</li>
+<li>implement another (second) oracle, which has some different features associated with it, or possibly serves a sport other than mediation (note that the participants count and list allows for different types of sports, so we're not actually restricted to just mediation)</li>
+<li>implement getMostRecentDispute so that it actually returns either the most recently added dispute, or the dispute that's closest to the current date in terms of when it will occur</li>
 <li>implement exception handling</li>
 </ul>
 <p>Once you're familiar with the mechanics of the relationship between the contract and the oracle, in Part 3 of of this three-part series we will discuss some of the strategic, design, and philosophical issues raised by this example.</p>

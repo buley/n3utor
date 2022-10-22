@@ -1,6 +1,6 @@
 
-var BoxingOracle = artifacts.require("BoxingOracle");
+var MediationOracle = artifacts.require("MediationOracle");
 
 module.exports = function(deployer) {
-	deployer.deploy(BoxingOracle);
+	deployer.deploy(MediationOracle);
 };

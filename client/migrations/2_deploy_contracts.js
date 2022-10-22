@@ -1,5 +1,5 @@
-var BoxingBets = artifacts.require("BoxingBets.sol");
+var Mediations = artifacts.require("Mediations.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(BoxingBets);
+  deployer.deploy(Mediations);
 };

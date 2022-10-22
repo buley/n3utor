@@ -1,36 +1,37 @@
 pragma solidity ^0.4.17;
 
 contract OracleInterface {
-    enum MatchOutcome {
-        Pending,    //match has not been fought to decision
-        Underway,   //match has started & is underway
-        Draw,       //anything other than a clear winner (e.g. cancelled)
-        Decided     //index of participant who is the winner 
+
+    enum DisputeOutcome {
+        Pending
+        Underway
+        Draw
+        Decided
     }
 
-    function getPendingMatches() public view returns (bytes32[]);
+    function getPendingDisputes() public view returns (bytes32[]);
 
-    function getAllMatches() public view returns (bytes32[]);
+    function getAllDisputes() public view returns (bytes32[]);
 
-    function matchExists(bytes32 _matchId) public view returns (bool); 
+    function disputeExists(bytes32 _disputeId) public view returns (bool);
 
-    function getMatch(bytes32 _matchId) public view returns (
+    function getDispute(bytes32 _disputeId) public view returns (
         bytes32 id,
         string name, 
         string participants,
         uint8 participantCount,
         uint date, 
-        MatchOutcome outcome, 
-        int8 winner);
+        DisputeOutcome outcome,
+        int8 mediator);
 
-    function getMostRecentMatch(bool _pending) public view returns (
+    function getMostRecentDispute(bool _pending) public view returns (
         bytes32 id,
         string name, 
         string participants,
         uint participantCount,
         uint date, 
-        MatchOutcome outcome, 
-        int8 winner);
+        DisputeOutcome outcome,
+        int8 mediator);
 
     function testConnection() public pure returns (bool);
 
